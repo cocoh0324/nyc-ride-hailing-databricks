@@ -1,8 +1,6 @@
 # NYC Ride-Hailing Analytics Engineering on Databricks
 
-A portfolio-ready analytics engineering project that modernises a large-scale NYC ride-hailing analysis into a governed Databricks medallion pipeline.
-
-The project turns raw High-Volume For-Hire Vehicle (HVFHV), taxi-zone and weather data into tested Delta tables for pricing, operations and modelling. It demonstrates the practical skills expected of an Analytics Engineer: PySpark and SQL transformation, dimensional enrichment, data-quality controls, idempotent processing, Unity Catalog governance, lineage and BI delivery.
+This project modernises a large-scale NYC ride-hailing analysis as a Databricks medallion pipeline. It transforms raw High-Volume For-Hire Vehicle (HVFHV), taxi-zone and weather data into validated Delta tables and curated metrics for pricing, operations and demand modelling, with built-in quality checks, traceable processing and AI/BI reporting.
 
 ![Databricks AI/BI dashboard](docs/dashboard.png)
 
