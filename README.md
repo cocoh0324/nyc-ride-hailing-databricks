@@ -51,7 +51,7 @@ The design is documented in [Architecture](docs/ARCHITECTURE.md), [Data dictiona
 - Weather and taxi-zone enrichment for pricing features.
 - Analysis-ready hourly, daily and airport data products.
 - AI/BI dashboard with KPI cards, filters and decision-focused charts.
-- Legacy notebook chain retained, with outputs removed, for migration traceability.
+- Legacy notebook chain retained with execution outputs and visualisations for migration traceability.
 
 ## Repository layout
 
@@ -136,7 +136,7 @@ For a full run, use `source_mode=public_download` and set `months=07,08,09,10,11
 
 ## Local legacy analysis
 
-The notebooks in `notebooks/legacy/` show the original Spark research workflow. Their cell outputs were removed to keep the repository small and avoid publishing generated data. To reproduce them locally:
+The notebooks in `notebooks/legacy/` show the original Spark research workflow and retain their execution outputs and visualisations for review. Source and generated data files remain excluded from the repository. To reproduce the notebooks locally:
 
 ```bash
 python -m venv .venv
