@@ -1,9 +1,8 @@
 """
-Downloads the raw data into the `data/raw` directory:
+Downloads the raw data into the `data/raw` directory.
 
-First, navigate to the `project-1-individual-HongyuHe0324` folder in the terminal.
-Then, run the following command to download the raw data:
-    cd scripts && python download_data.py
+Run this command from the repository root:
+    python scripts/download_sources.py
 """
 
 import os

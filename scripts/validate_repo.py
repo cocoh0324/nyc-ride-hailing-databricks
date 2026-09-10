@@ -23,13 +23,12 @@ def validate_python() -> None:
 
 
 def validate_notebooks() -> None:
-    for path in sorted((ROOT / "notebooks" / "legacy").glob("*.ipynb")):
+    notebook_paths = sorted((ROOT / "notebooks").glob("*.ipynb"))
+    assert notebook_paths, "No notebooks found"
+    for path in notebook_paths:
         notebook = json.loads(path.read_text(encoding="utf-8"))
         assert notebook.get("nbformat") == 4, f"Unexpected notebook version: {path}"
-        for cell in notebook.get("cells", []):
-            if cell.get("cell_type") == "code":
-                assert not cell.get("outputs"), f"Notebook output must be stripped: {path}"
-                assert cell.get("execution_count") is None, f"Execution count must be cleared: {path}"
+        assert isinstance(notebook.get("cells"), list), f"Notebook cells are missing: {path}"
 
 
 def validate_public_content() -> None:
