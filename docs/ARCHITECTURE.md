@@ -68,7 +68,7 @@ flowchart TD
 - Publish daily and hourly zone-level demand and commercial metrics.
 - Join weather features for downstream pricing and modelling.
 - Isolate airport performance for operational analysis.
-- Keep dimensions needed by dashboard filters.
+- Publish one date-aware `dashboard_trip_metrics` view with the common date, borough, zone and provider dimensions needed by every trip-based dashboard visual.
 
 ### Operations and governance
 
@@ -84,4 +84,3 @@ The source-specific trip key combines provider, dispatch base, request/pickup/dr
 ## Production evolution
 
 For production use, the notebook can be separated into Databricks Workflows tasks, with Auto Loader or Lakeflow Declarative Pipelines for ingestion, expectations for quality enforcement, environment-specific catalogs, CI/CD through Databricks Asset Bundles and alerts routed to an operational channel.
-

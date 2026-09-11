@@ -82,6 +82,12 @@ Hourly zone metrics enriched with weather and commercial ratios. Intended for pr
 
 Daily zone metrics restricted to Newark, JFK and LaGuardia airport location IDs.
 
+## Dashboard view
+
+### `dashboard_trip_metrics`
+
+A shared date-aware view over `gold_hourly_zone_metrics` for all trip-based AI/BI dashboard visuals. It retains `pickup_date`, hour, borough, zone and provider dimensions so one global filter can consistently update every trip, revenue, zone, borough and airport widget. The `is_airport` flag identifies Newark, JFK and LaGuardia pickup zones.
+
 ## Operational table
 
 ### `pipeline_quality_audit`
@@ -95,4 +101,3 @@ Daily zone metrics restricted to Newark, JFK and LaGuardia airport location IDs.
 | `run_id` | Unique pipeline-run identifier |
 | `checked_at` | Check execution timestamp |
 | `source_months` | Source period processed by the run |
-

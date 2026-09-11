@@ -349,6 +349,34 @@ pricing_features.write.format("delta").mode("overwrite").option("overwriteSchema
     .saveAsTable("gold_airport_hotspots")
 )
 
+# A single date-aware source for every trip-based dashboard visual. Keeping the
+# common filter dimensions in one view prevents widgets from bypassing the
+# dashboard's global date, borough and provider filters.
+spark.sql("""
+CREATE OR REPLACE VIEW workspace.ride_hailing.dashboard_trip_metrics AS
+SELECT
+  pickup_hour_ts,
+  pickup_date,
+  pickup_hour,
+  day_of_week,
+  is_weekend,
+  PULocationID AS pickup_location_id,
+  hvfhs_license_num AS license_provider,
+  borough,
+  zone,
+  service_zone,
+  trip_count,
+  avg_trip_miles,
+  avg_trip_duration_minutes,
+  avg_base_fare,
+  gross_revenue,
+  driver_pay,
+  shared_request_rate,
+  wav_request_rate,
+  PULocationID IN (1, 132, 138) AS is_airport
+FROM workspace.ride_hailing.gold_hourly_zone_metrics
+""")
+
 # COMMAND ----------
 # MAGIC %md
 # MAGIC ## 5. Data quality monitoring and operational audit

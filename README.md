@@ -133,6 +133,7 @@ For a full run, use `source_mode=public_download` and set `months=07,08,09,10,11
 | Gold | `gold_daily_zone_metrics` | Daily zone-level pricing metrics |
 | Gold | `gold_pricing_feature_mart` | Demand, commercial and weather features |
 | Gold | `gold_airport_hotspots` | Airport-specific commercial performance |
+| Dashboard | `dashboard_trip_metrics` | Shared date-aware source for all trip-based dashboard visuals |
 | Operations | `pipeline_quality_audit` | Persistent quality-check outcomes |
 
 ## Original analysis notebooks

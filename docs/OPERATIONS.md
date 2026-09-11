@@ -9,6 +9,7 @@
 5. Review `pipeline_quality_audit` and `silver_trips_quarantine`.
 6. Confirm Gold tables refreshed successfully.
 7. Refresh the AI/BI dashboard and validate its KPI totals.
+8. Confirm all trip-based widgets use `dashboard_trip_metrics` and map the global date filter to its `pickup_date` field.
 
 ## Quality gates
 
@@ -30,6 +31,7 @@ Warnings that do not breach a gate remain queryable through the audit and quaran
 | Quarantine spike | Group by `dq_reasons` | Isolate affected source month and inspect source quality |
 | Duplicate-key failure | `trip_id`, ingestion timestamps | Validate key construction and latest-record window |
 | Dashboard totals stale | Gold table history, dashboard refresh time | Refresh the dataset after confirming the pipeline completed |
+| Out-of-range date still shows trip metrics | Dashboard dataset and filter mapping | Point all trip-based widgets to `dashboard_trip_metrics` and map the date picker to `pickup_date` |
 | Full run exceeds capacity | Source months and cluster size | Process one month at a time or use larger compute |
 
 ## Recovery
@@ -49,4 +51,3 @@ ORDER BY checked_at DESC, check_name;
 ## Scheduling recommendation
 
 For production, schedule monthly ingestion as a Databricks Workflow. Add task-level retries, a failure notification, a separate quality task and a final dashboard-refresh task. Use development, test and production catalogs rather than changing the same tables in place.
-
