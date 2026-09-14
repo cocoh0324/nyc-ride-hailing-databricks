@@ -58,7 +58,7 @@ print({"catalog": CATALOG, "schema": SCHEMA, "year": YEAR, "months": MONTHS, "in
 # MAGIC %md
 # MAGIC ## 2. Bronze — source ingestion with audit metadata
 # MAGIC
-# MAGIC Files are downloaded by Databricks from authoritative public sources, so the 14GB local project folder does not need to be uploaded.
+# MAGIC Files are downloaded by Databricks from authoritative public sources.
 
 # COMMAND ----------
 
@@ -415,7 +415,7 @@ assert not failed_checks, f"Pipeline failed data-quality checks: {failed_checks}
 # MAGIC %md
 # MAGIC ## 6. Consumer validation
 # MAGIC
-# MAGIC These queries mirror how pricing analysts, data scientists and actuaries consume the Gold layer.
+# MAGIC These queries reflect how pricing analysts, data scientists and actuaries consume the Gold layer.
 
 # COMMAND ----------
 
