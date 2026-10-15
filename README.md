@@ -62,6 +62,7 @@ The design is documented in [Architecture](docs/ARCHITECTURE.md), [Data dictiona
 ├── docs/
 │   ├── ARCHITECTURE.md
 │   ├── DATA_DICTIONARY.md
+│   ├── MAST30034_Project_1_Report_1313969.pdf
 │   ├── MIGRATION_NOTES.md
 │   ├── OPERATIONS.md
 │   └── dashboard.png
